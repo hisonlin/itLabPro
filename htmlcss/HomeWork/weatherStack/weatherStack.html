@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="weatherStack.css">
+    <script src="https://kit.fontawesome.com/7f42decd1c.js" crossorigin="anonymous"></script>
+    <title>Weatherstack</title>
+</head>
+<body>
+
+<div class="main">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://weatherstack.com/site_images/weatherstack_logo_white.png" width="200" alt="logo">
+            </div>
+            <div class="nav_bar">
+                <div class="menu-item"><a href="#">Pricing</a></div>
+                <div class="menu-item"><a href="#">Documentation</a></div>
+                <div class="menu-item"><a href="#">FAQ</a></div>
+                <div class="menu-item"><a href="#">Affiliates</a></div>
+                <div class="menu-item"><a href="#">Blog</a></div>
+                <div id="status" class="menu-item"><a href="#">Status</a></div>
+                <div class="menu-item" id="loginBtn"><a href="#">Log In</a></div>
+                <div class="menu-item" id="signUpBtn"><a href="#">SIGN UP FREE</a></div>
+                <button id="mobile-hamburger" onclick="openDrawer()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="drawer close">
+        <div class="drawer-content">
+            <div class="drawer-item"><a href="#">Pricing <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">Documentation <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">FAQ <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">Affiliates <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">Blog <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">Status <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-item"><a href="#">Log In <i class="fa-solid fa-chevron-right"></i></a></div>
+            <div class="drawer-button"><a href="#">SIGN UP FREE</a></div>
+        </div>
+
+    </div>
+    <div class="current-weather none">
+        <div class="current-weather-container">
+            <div class="current-weather-left">
+                <div style="font-size: 32px; font-weight: bold">Real-Time & Historical
+                    <br>
+                    World Weather Data API
+                </div>
+                <div style="font-size: 20px">
+                    Retrieve instant, accurate weather information for
+                    <br>
+                    any location in the world in lightweight JSON format
+                </div>
+                <div style="background: rgba(255, 255, 255, .1);
+                border: 0 solid rgba(255, 255, 255, 1);
+                border-radius: 17px;
+                padding: 15px;
+                width: fit-content;
+                font-size: 17px">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span style="margin-left: 10px">Trusted by 75,000 companies worldwide</span>
+                </div>
+                <div style="display: flex; align-items: center; gap:20px">
+                    <div id="start-api-btn"><a href="#">START USING THE API</a></div>
+                    <div>- It's free!</div>
+                </div>
+            </div>
+            <div class="current-weather-right">
+                <div class="first-row"> Coquitlam, British Columbia, Canada</div>
+                <div class="flex-row">
+                    <div class="flex-column">
+                        <div id="today-icon">
+                            <span class="item2-1-2">Sunny</span>
+                        </div>
+
+                    </div>
+                    <div class="flex-column" style="font-size: 40px">17°c</div>
+                    <div class="flex-column">
+                        <div>Wind: 4 kmph</div>
+                        <div>Precip: 0 mm</div>
+                        <div>Pressure: 1018mb</div>
+                    </div>
+
+                </div>
+                <div class="flex-row">
+                    <div class="flex-column">
+                        <div>FRI</div>
+                        <img src="https://weatherstack.com/site_images/weather_icon_full_clouds.svg" alt="">
+                        <div>10°c</div>
+                    </div>
+
+                    <div class="flex-column">
+                        <div>SAT</div>
+                        <img src="https://weatherstack.com/site_images/weather_icon_full_clouds.svg" alt="">
+                        <div>9°c</div>
+                    </div>
+
+                    <div class="flex-column">
+                        <div>SUN</div>
+                        <img src="https://weatherstack.com/site_images/weather_icon_full_clouds.svg" alt="">
+                        <div>10°c</div>
+                    </div>
+
+                    <div class="flex-column">
+                        <div>MON</div>
+                        <img src="https://weatherstack.com/site_images/weather_icon_full_sun.svg" alt="">
+                        <div>10°c</div>
+                    </div>
+
+                    <div class="flex-column">
+                        <div>TUE</div>
+                        <img src="https://weatherstack.com/site_images/weather_icon_full_sun.svg" alt="">
+                        <div>11°c</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="happy-customers none">
+    <div id="happy-customers-text" style="font-size: 15px; min-width: 185px; font-weight: bold">Happy Customers:</div>
+    <img class="client_img" src="https://weatherstack.com/site_images/client_deloitte.svg" alt=""
+         style="max-width:187px">
+    <img class="client_img" src="https://weatherstack.com/site_images/client_microsoft.svg" alt=""
+         style="max-width:187px">
+    <img class="client_img" src="https://weatherstack.com/site_images/client_warnerbros.svg" alt=""
+         style="min-width:110px">
+    <img class="client_img" src="https://weatherstack.com/site_images/client_wawa.svg" alt=""
+         style="min-width:132px">
+    <img class="client_img" src="https://weatherstack.com/site_images/client_schneider.svg" alt=""
+         style="max-width:187px">
+    <img class="client_img" src="https://weatherstack.com/site_images/client_ericsson_2.svg" alt=""
+         style="min-width:112px">
+</div>
+
+<div class="features-container none">
+    <div class="features">
+        <div class="features-item">
+            <div class="features-item-icon">
+                <i class="fa-solid fa-arrows-spin"></i>
+            </div>
+            <div class="features-item-text">
+                Real-Time, History, Forecast
+            </div>
+            <div class="features-item-content">
+                Our API covers global weather data across the board — from a multi-year history all the way to live
+                information and accurate weather forecasts.
+            </div>
+        </div>
+        <div class="features-item">
+            <div class="features-item-icon">
+                <i class="fa-solid fa-thumbtack"></i>
+            </div>
+            <div class="features-item-text">
+                Millions of Locations
+            </div>
+            <div class="features-item-content">
+                Make use of live or hour-by-hour weather data for millions of cities and towns worldwide, supporting a
+                variety methods to look up any location.
+            </div>
+        </div>
+        <div class="features-item">
+            <div class="features-item-icon">
+                <i class="fa-solid fa-gauge"></i>
+            </div>
+            <div class="features-item-text">
+                Rock-Solid Uptime & Speed
+            </div>
+            <div class="features-item-content">
+                Powered by best-in-class cloud infrastructure, our API delivers data in milliseconds around the clock
+                with an uptime of nearly 100%.
+            </div>
+        </div>
+        <div class="features-item">
+            <div class="features-item-icon">
+                <i class="fa-solid fa-tags"></i>
+            </div>
+            <div class="features-item-text">
+                Start Free
+            </div>
+            <div class="features-item-content">
+                Start testing the API immediately by signing up for our Free Plan. You can always upgrade later — no
+                strings attached.
+            </div>
+        </div>
+    </div>
+    <div class="map">
+        <div class="map-left">
+            <div style="font-size: 30px; font-weight: bold">Access to Global Weather Data, Developer-friendly</div>
+            <div>Get instant access to accurate weather data for any geo-point in the world and enjoy a rich set of
+                capabilities:
+            </div>
+            <div>Real-Time Weather API</div>
+            <div>Historical Weather API</div>
+            <div>Weather Forecasts API</div>
+            <div>Location Autocomplete</div>
+            <div>Bulk API Endpoint</div>
+        </div>
+        <div class="map-right">
+            <img id="map-img" src="https://weatherstack.com/site_images/world_map_vector.svg" alt="" width="635px">
+        </div>
+    </div>
+</div>
+<div class="code-example none">
+    <div class="code-example-container">
+        <div id="example-text">EXAMPLE</div>
+        <div style="font-size: 25px; font-weight: bold">Complete Weather Data Coverage</div>
+        <div style="font-size: 20px; max-width: 600px">Get years of historical weather data, request real-time weather
+            information or make use of accurate weather forecasts.
+        </div>
+        <div class="button-list">
+            <div class="button-item active" data-target="current-weather">Current Weather</div>
+            <div class="button-item" data-target="weather-history">Weather History</div>
+            <div class="button-item" data-target="weather-forecast">Weather Forecast</div>
+        </div>
+        <div class="code-container">
+<pre id="current-weather" class="code-content active">
+{
+    "request": {
+        "type": "City",
+        "query": "San Francisco, United States of America",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "San Francisco",
+        "country": "United States of America",
+        "region": "California",
+        "lat": "37.775",
+        "lon": "-122.418",
+        "timezone_id": "America/Los_Angeles",
+        "localtime": "2019-09-03 05:35",
+        "localtime_epoch": 1567488900,
+        "utc_offset": "-7.0"
+    },
+    "current": {
+        "observation_time": "12:35 PM",
+        "temperature": 16,
+        "weather_code": 122,
+        "weather_icons": [
+            "https://assets.weatherstack.com/images/symbol.png"
+        ],
+        "weather_descriptions": [
+            "Overcast"
+        ],
+        "wind_speed": 17,
+        "wind_degree": 260,
+        "wind_dir": "W",
+        "pressure": 1016,
+        "precip": 0,
+        "humidity": 87,
+        "cloudcover": 100,
+        "feelslike": 16,
+        "uv_index": 0,
+        "visibility": 16
+    }
+}
+</pre>
+            <pre id="weather-history" class="code-content">
+                {
+    "request": {
+        "type": "City",
+        "query": "New York, United States of America",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "New York",
+        "country": "United States of America",
+        "region": "New York",
+        "lat": "40.714",
+        "lon": "-74.006",
+        "timezone_id": "America/New_York",
+        "localtime": "2019-09-08 09:36",
+        "localtime_epoch": 1567935360,
+        "utc_offset": "-4.0"
+    },
+    "current": {
+        "observation_time": "01:36 PM",
+        "temparature": 18,
+        "weather_code": 113,
+        "weather_icons": [
+            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png"
+        ],
+        "weather_descriptions": [
+            "Sunny"
+        ],
+        "wind_speed": 7,
+        "wind_degree": 270,
+        "wind_dir": "W",
+        "pressure": 1018,
+        "precip": 0,
+        "humidity": 70,
+        "cloudcover": 0,
+        "feelslike": 18,
+        "uv_index": 5,
+        "visibility": 16
+    },
+    "historical": {
+        "2013-07-01": {
+            "date": "2013-07-01",
+            "date_epoch": 1372636800,
+            "astro": {
+                "sunrise": "05:29 AM",
+                "sunset": "08:31 PM",
+                "moonrise": "12:59 AM",
+                "moonset": "02:42 PM",
+                "moon_phase": "Last Quarter",
+                "moon_illumination": 40
+            },
+            "mintemp": 21,
+            "maxtemp": 25,
+            "avgtemp": 22,
+            "totalsnow": 0,
+            "sunhour": 12.5,
+            "uv_index": 5
+        }
+    }
+}
+            </pre>
+            <pre id="weather-forecast" class="code-content">
+                {
+    "request": {
+        "type": "City",
+        "query": "Chicago, United States of America",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "Chicago",
+        "country": "United States of America",
+        "region": "Illinois",
+        "lat": "41.850",
+        "lon": "-87.650",
+        "timezone_id": "America/Chicago",
+        "localtime": "2019-09-08 08:39",
+        "localtime_epoch": 1567931940,
+        "utc_offset": "-5.0"
+    },
+    "current": {
+        "observation_time": "01:39 PM",
+        "temparature": 19,
+        "weather_code": 122,
+        "weather_icons": [
+            "https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0004_black_low_cloud.png"
+        ],
+        "weather_descriptions": [
+            "Overcast"
+        ],
+        "wind_speed": 17,
+        "wind_degree": 100,
+        "wind_dir": "E",
+        "pressure": 1019,
+        "precip": 0,
+        "humidity": 73,
+        "cloudcover": 100,
+        "feelslike": 19,
+        "uv_index": 4,
+        "visibility": 16
+    },
+    "forecast": {
+        "2019-09-08": {
+            "date": "2019-09-08",
+            "date_epoch": 1567900800,
+            "astro": {
+                "sunrise": "06:23 AM",
+                "sunset": "07:13 PM",
+                "moonrise": "04:25 PM",
+                "moonset": "12:58 AM",
+                "moon_phase": "First Quarter",
+                "moon_illumination": 62
+            },
+            "mintemp": 10,
+            "maxtemp": 18,
+            "avgtemp": 16,
+            "totalsnow": 0,
+            "sunhour": 6.5,
+            "uv_index": 4
+        }
+    }
+}
+            </pre>
+        </div>
+    </div>
+    <div class="support-boxes">
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-solid fa-database"></i>
+                <span>Reliable Data Source</span>
+            </div>
+            <div class="support-boxes-item-content">
+                Powered by a strong backbone of data sources, our weather data API comes with the highest level of
+                reliability, consistency and accuracy.
+            </div>
+        </div>
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-solid fa-gauge"></i>
+                <span>Lightning-fast Response</span>
+            </div>
+            <div class="support-boxes-item-content">
+                Weather data is delivered in lightweight JSON format to ensure a high level of speed and compatibility
+                with any programming language.
+            </div>
+        </div>
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Scalable Infrastructure</span>
+            </div>
+            <div class="support-boxes-item-content">
+                Our REST API is backed by scalable cloud infrastructure built and maintained by apilayer, capable of
+                handling billions of requests per day.
+            </div>
+        </div>
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Flexible Location Lookup</span>
+            </div>
+            <div class="support-boxes-item-content">
+                Millions of locations can be looked up by city or region name, ZIP code, IP address, or even using
+                latitude and longitude coordinates.
+            </div>
+        </div>
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Bank-Level Security</span>
+            </div>
+            <div class="support-boxes-item-content">
+                All data streams sent to and from the weatherstack API are secured using industry-standard 256-bit HTTPS
+                (SSL) encryption.
+            </div>
+        </div>
+        <div class="support-boxes-item">
+            <div class="support-boxes-item-title">
+                <i class="fa-regular fa-file"></i>
+                <span>Extensive API Documentation</span>
+            </div>
+            <div class="support-boxes-item-content">
+                An API is only as good as its documentation, which is why a series of interactive code examples in
+                multiple languages are waiting for you.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="companies none">
+    <div class="companies-container">
+        <div style="font-size: 25px;font-weight: bold">Join more than 75,000 companies worldwide using the weatherstack
+            API
+        </div>
+        <div style="font-size: 20px">We are proud of delivering accurate weather data to some of the smartest brands out
+            there.
+        </div>
+        <div class="companies-img">
+            <div style="width:250px; background-color: #263e6a; display: flex; justify-content: center ">
+                <div style="width:175px;background:  url('https://weatherstack.com/site_images/client_white_daimler.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:250px; background-color: #eef2f5; display: flex; justify-content: center ">
+                <div style="width:150px;background:  url('https://weatherstack.com/site_images/client_deloitte.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:135px; background-color: #01275b; display: flex; justify-content: center ">
+                <div style="width:65px;background:  url('https://weatherstack.com/site_images/client_white_ericsson_2.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:250px; background-color: #eef2f5; display: flex; justify-content: center ">
+                <div style="width:175px;background:  url('https://weatherstack.com/site_images/client_microsoft.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:200px; background-color: #009e4d; display: flex; justify-content: center ">
+                <div style="width:150px;background:  url('https://weatherstack.com/site_images/client_white_schneider.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:190px; background-color: #027ac2; display: flex; justify-content: center ">
+                <div style="width:65px;background:  url('https://weatherstack.com/site_images/client_white_warnerbros.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:250px; background-color: #ee2e25; display: flex; justify-content: center ">
+                <div style="width:110px;background:url('https://weatherstack.com/site_images/client_white_wawa.svg') no-repeat center;"></div>
+            </div>
+            <div style="width:135px; background-color: #eef2f5; display: flex; justify-content: center; align-items: center ">
+                <div style="width:90px;background:url('https://weatherstack.com/site_images/client_canda.svg') no-repeat center; background-size: contain"></div>
+            </div>
+            <div style="width:260px; background-color: #23477f; display: flex; justify-content: center ">
+                <div style="width:250px;background:url('https://weatherstack.com/site_images/client_mckinsey.svg') no-repeat center;background-size: contain"></div>
+            </div>
+            <div style="width:250px; background-color: #eef2f5; display: flex; justify-content: center ">
+                <div style="width:155px; background:url('https://weatherstack.com/site_images/client_rimowa.svg') no-repeat center;background-size: contain"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="signup-bar none">
+    <div class="display-none" style="font-weight: bold; margin-right:20px;">Sign up for our Free Plan to get instant
+        access to weather data
+    </div>
+    <div class="display-none" style="margin-right: 20px"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="signup-bar-btn"><a href="#">GET FREE API ACCESS</a></div>
+</div>
+
+<footer class="none">
+    <div class="footer-container">
+        <div class="footer-first-row">
+            <div id="logo-column" class="column">
+                <img src="https://weatherstack.com/site_images/weatherstack_logo_footer.png" alt="" width="197"
+                     height="35">
+                <div style="display: flex; gap: 10px">
+                    <a href="https://github.com/apilayer/weatherstack">
+                        <img src="https://weatherstack.com/site_images/github-original.svg" alt="" width="25"
+                             height="25">
+                    </a>
+                    <a href="https://www.facebook.com/APILayer/k">
+                        <img src="https://weatherstack.com/site_images/facebook-original.svg" alt="" width="25"
+                             height="25">
+                    </a>
+                    <a href="https://www.instagram.com/apilayer/">
+                        <img src="https://weatherstack.com/site_images/instagram.png" alt="" width="25" height="25">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCwDncja3klyMhkKXWV1zoNQ">
+                        <img src="https://weatherstack.com/site_images/youtube.png" alt="" width="25" height="25">
+                    </a>
+                    <a href="https://twitter.com/apilayer">
+                        <img src="https://weatherstack.com/site_images/twitter-original.svg" alt="" width="25"
+                             height="25">
+                    </a>
+                    <a href="https://www.linkedin.com/company/apilayer/">
+                        <img src="https://weatherstack.com/site_images/linkedin-original.svg" alt="" width="25"
+                             height="25">
+                    </a>
+                </div>
+            </div>
+            <div id="product-column" class="column">
+                <div class="footer-title">PRODUCT</div>
+                <a>Pricing</a>
+                <a>List Your API</a>
+                <a>Why choose us?</a>
+                <a>Marketplace</a>
+                <a>Affiliates</a>
+            </div>
+            <div class="column" id="docs-column">
+                <div class="footer-title">DOCS & HELP</div>
+                <a>Documentation</a>
+                <a>Blog</a>
+                <a>FAQs</a>
+                <a>API Glossary</a>
+            </div>
+            <div class="column" id="account-column">
+                <div class="footer-title">ACCOUNT</div>
+                <a>Log In</a>
+                <a>Forgot Password</a>
+                <a>FREE Signup</a>
+            </div>
+            <div class="column" id="touch-column">
+                <div class="footer-title">GET IN TOUCH</div>
+                <a>Contact</a>
+                <a>Get a quote</a>
+            </div>
+
+        </div>
+        <div class="footer-second-row">
+            <span style="color: white">
+                <a href="">Imprint / Legal</a>
+                <span>|</span>
+                <a href="">Privacy</a>
+                <span>|</span>
+                <a href="">Terms</a>
+                <span>|</span>
+                <a href="">Cookies Preference</a>
+                <span>|</span>
+                <a href="">Sitemap</a>
+            </span>
+            <span style="font-size: 13px; color: white">
+                © 2022 Weatherstack API, an <a style="text-decoration: white underline; font-size: 13px" href="">APILayer</a> product. All rights reserved.
+            </span>
+
+
+        </div>
+    </div>
+</footer>
+
+<script src="weatherStack.js"></script>
+</body>
+</html>

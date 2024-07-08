@@ -1,0 +1,42 @@
+.static{
+    position: static;
+    border: 1px solid red;
+    width: 300px;
+
+}
+
+.relative{
+    position: relative;
+    border: 1px solid red;
+    left: 50px;
+    width: 500px;
+    height: 500px;
+}
+
+.absolute{
+    position: absolute;
+    border: 1px solid red;
+    bottom:10px;
+    right: 10px;
+
+}
+
+.fixed {
+    position: fixed;
+    border: 1px solid red;
+    bottom: 20px;
+    right: 20px;
+    padding:20px;
+    margin: 20px;
+}
+
+.sticky{
+    position: sticky;
+    border: 1px solid red;
+    /*this is the position after scroll*/
+    top: 0;
+    left:50px;
+    width: 300px;
+}
+
+

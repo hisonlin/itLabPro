@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<div class="header">
+    <div class='about-title'>About Hison
+        <div class="title-layer">About Hison</div>
+    </div>
+</div>
+
+<div class="button-container">
+    <button class="turn90" onclick="navToLinkedin()">Linkedin</button>
+    <button class="turn90" onclick="navToGithub()">Github</button>
+</div>
+
+<div class='aboutContainer'>
+    <div class='about'>
+        <p>I am a passionate developer from Hong Kong. I and my family moved to Vancouver in Aug 2022, now living in
+            Coquitlam, and I am filled anticipation for the days ahead.</p>
+        <p>In Hong Kong, I worked as a Financial Planning Manager for 10 years. This experience enhanced my abilities in
+            self-learning, analysis, and management, making me a self-disciplined individual capable of effective
+            communication with others. </p>
+        <p>I graduated from Vancouver Community College in April 2024, with a passion for creating websites and software
+            applications. I've worked on various projects, enhancing my skills in the entire software development
+            lifecycle using different frameworks, specializing in user interfaces and integrating them with web and
+            mobile applications. Additionally, I have experience with databases, adding depth and interactivity to my
+            applications.</p>
+        <p>At home, I am a father to two children, enjoy exploring the world with my children. I also love playing
+            various sports like basketball, football, and badminton, and I am passionate about studying various
+            development technologies. I am committed to continuous learning and becoming a better version of myself,
+            eagerly anticipating new challenges in the future.</p>
+    </div>
+    <div class='aboutImage'>
+        <img src='photo.jpg' alt='hison'/>
+    </div>
+</div>
+
+<div class="messageContainer">
+    <input style="width: 400px" type="text" placeholder="Leave a message to me" id="message"/>
+    <button id="send" onclick="sendMessage()">Send</button>
+</div>
+
+<!--projectcard-->
+<div class="ag-format-container">
+    <div class="ag-courses_box">
+
+        <div class="ag-courses_item">
+            <a href="https://github.com/masamoe/Optimate" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+                <div class="ag-courses-item_title">
+                    Android App - Optimate
+                </div>
+                <div class="ag-courses-item_description">
+                    <ul>
+                        <li>Business Management App to optimize workflow processes and achieve greater operational
+                            efficiency
+                        </li>
+                        <li>Comprehensive development from Wireframes, Mockups, Front End and Backend Developemt and
+                            Deployement etc
+                        </li>
+                        <li>Including features like: clock in/out system, dynamic landing page, expenses and revenues
+                            uploading and history, scheduling, employee account creation and access assignment,
+                            downloadable payrolls, requests submission etc
+                        </li>
+                        <li><span>Firebase</span> usage: authhentication, real-time database, storage and messaging</li>
+                        <li><span>NodeJS</span> server to handle Stripe payments and <span>Firebase</span> messaging,
+                            communicate between the app and external services
+                        </li>
+                        <li><span>Kotlin</span> as the primary programming language, <span>Jetpack Compose</span> and
+                            <span>XML</span> integrated with <span>Material Design 3</span> for styling
+                        </li>
+                    </ul>
+                </div>
+                <div class="ag-courses-item_date-box">
+                            <span class="ag-courses-item_date">
+                                Jan 2024 - Mar 2024
+                            </span>
+                </div>
+            </a>
+        </div>
+        <div class="ag-courses_item">
+            <a href="https://hisonlin-car-rental.vercel.app/" class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+                <div class="ag-courses-item_title">
+                    React - Car Rental Web App
+                </div>
+                <div class="ag-courses-item_description">
+                    <ul>
+                        <li>Built with <span>Vite</span> and <span>React</span></li>
+                        <li>Uses <span>Material-UI (MUI)</span> to ensure the design looks great and responsive to any
+                            devices.
+                        </li>
+                        <li>All data managed through <span>Firebase</span>. This includes user information, wishlists,
+                            and orders.
+                        </li>
+                        <li>Integrated Google login, making it quick and easy to access our service.</li>
+                    </ul>
+                </div>
+                <div class="ag-courses-item_date-box">
+                            <span class="ag-courses-item_date">
+                                Oct 2023 - Dec 2023
+                            </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--table-->
+<div class="table">
+    <table>
+        <tr>
+            <th>Project</th>
+            <th>Duration</th>
+            <th>Technologies</th>
+        </tr>
+        <tr>
+            <td>Optimate</td>
+            <td>Jan 2024 - Mar 2024</td>
+            <td>Kotlin, Jetpack Compose, XML, Material Design 3, Firebase, NodeJS, Stripe</td>
+        </tr>
+        <tr>
+            <td>Car Rental Web App</td>
+            <td>Oct 2023 - Dec 2023</td>
+            <td>Vite, React, Material-UI, Firebase, Google Login</td>
+        </tr>
+    </table>
+</div>
+
+<div class="video">
+    <video controls>
+        <source src="vancouver.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+
+<script>
+    const message = document.getElementById('message');
+    const sendMessage = () => {
+        alert(message.value);
+    }
+    const navToLinkedin = () => {
+        window.location.href = 'https://www.linkedin.com/in/hisonlin/';
+    }
+    const navToGithub = () => {
+        window.location.href = 'https://github.com/hisonlin';
+    }
+</script>
+
+</body>
+</html>

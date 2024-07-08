@@ -1,0 +1,47 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all ease-in-out 0.5s;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.carousel-item img {
+  width: 130px;
+  height: 100px;
+  margin: 0 5px;
+  border-radius: 10px;
+  background-size: cover;
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  position: relative;
+  transition: all 0.1s ease-in-out;
+}
+
+.carousel-item img:hover {
+  z-index: 2;
+  cursor: pointer;
+  width: 150px;
+  height: 100px;
+  bottom: 20px;
+}
+
+
+

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.firstSentence{
+    color: #696868;
+    font-size: 2vh;
+    font-weight: bold;
+}
+.secondSentence{
+    color: #3D3D3D;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-size: 15vh;
+}
+.thirdSentence{
+    color: #a8a7a7;
+    font-size: 3vh;
+}
+
+.footerContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+    margin: 0 5vh;
+}
+
+.footerContainer:hover{
+    background-color: #52fffd;
+    cursor: pointer;
+}
+
+.copyright{
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 5vh;
+    color: #999;
+}
+
+@media only screen and (max-width:1130px){
+    .firstSentence{
+        font-size: 1.8vh;
+    }
+    .secondSentence{
+        font-size: 9.8vh;
+    }
+    .thirdSentence{
+        font-size: 2.7vh;
+    }
+}
+
+@media only screen and (max-width:950px){
+    .firstSentence{
+        font-size: 1.6vh;
+    }
+    .secondSentence{
+        font-size: 8.8vh;
+    }
+    .thirdSentence{
+        font-size: 2.4vh;
+    }
+}
+
+@media only screen and (max-width:765px){
+    .firstSentence{
+        font-size: 1.4vh;
+    }
+    .secondSentence{
+        font-size: 7vh;
+    }
+    .thirdSentence{
+        font-size: 2vh;
+    }
+}
+
+@media only screen and (max-width:650px){
+    .firstSentence{
+        font-size: 1.2vh;
+    }
+    .secondSentence{
+        font-size: 4.5vh;
+    }
+    .thirdSentence{
+        font-size: 1.3vh;
+    }
+}

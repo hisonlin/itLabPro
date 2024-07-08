@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=My+Soul&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+.nav-link-item:hover {
+  transform: scale(1.05);
+  font-weight: 500;
+}
+
+.gradient-text {
+  font-family: "My Soul", cursive;
+  background: linear-gradient(to right,
+          #888 20%,
+          #aaaaaa 30%,
+          #cccccc 70%,
+          #dddddd 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+#topBar{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+

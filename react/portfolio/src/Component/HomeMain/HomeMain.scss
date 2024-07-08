@@ -1,0 +1,176 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+// .subtitle {
+//     font-size: 2vh;
+//     color: #7c7a7a;
+//     letter-spacing: 0.5em;
+//   }
+
+
+#logoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height:40vh;
+}
+
+.button {
+  --offset: 10px;
+  --border-size: 2px;
+  position: relative;
+  padding: 0.8em 2.4em;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: background .8s ease;
+  font-size: 1.5vh;
+
+  &:hover {
+    background:#cdcdcd;
+    color:#333;
+  }
+
+  &__horizontal,
+  &__vertical {
+    position: absolute;
+    top: var(--horizontal-offset, 0);
+    right: var(--vertical-offset, 0);
+    bottom: var(--horizontal-offset, 0);
+    left: var(--vertical-offset, 0);
+    transition: transform .8s ease;
+    will-change: transform;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: inherit;
+    }
+  }
+
+  &__horizontal {
+    --vertical-offset: calc(var(--offset) * -1);
+    border-top: var(--border-size) solid currentcolor;
+    border-bottom: var(--border-size) solid currentcolor;
+
+    &::before {
+      top: calc(var(--vertical-offset) - var(--border-size));
+      bottom: calc(var(--vertical-offset) - var(--border-size));
+      left: calc(var(--vertical-offset) * -1);
+      right: calc(var(--vertical-offset) * -1);
+    }
+  }
+
+  &:hover &__horizontal {
+    transform: scaleX(0);
+  }
+
+  &__vertical {
+    --horizontal-offset: calc(var(--offset) * -1);
+    border-left: var(--border-size) solid currentcolor;
+    border-right: var(--border-size) solid currentcolor;
+
+    &::before {
+      top: calc(var(--horizontal-offset) * -1);
+      bottom: calc(var(--horizontal-offset) * -1);
+      left: calc(var(--horizontal-offset) - var(--border-size));
+      right: calc(var(--horizontal-offset) - var(--border-size));
+    }
+  }
+
+  &:hover &__vertical {
+    transform: scaleY(0);
+  }
+
+}
+
+/* Adjust for medium screens */
+@media (max-width: 768px) {
+  .button {
+    padding: 0.6em 1.8em;
+    font-size: 1.2vh;
+  }
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 480px) {
+  .button {
+    padding: 0.4em 1.2em;
+    font-size: 1vh;
+  }
+  // .glitch {
+  //   font-size: 10vh;
+  // }
+}
+
+// .glitch {
+//   font-family: "Abril Fatface", serif;
+//   letter-spacing: 0.1em;
+//   color: #333;
+//   font-size: 15vh;
+//   animation: glitch 3s 1; /* Run once */
+//   position: relative;
+// }
+
+// .glitch::before {
+//   content: attr(data-text);
+//   position: absolute;
+//   left: -2px;
+//   text-shadow: -5px 0 #555;
+//   overflow: hidden;
+//   top: 0;
+//   animation: noise-1 3s linear alternate-reverse 1, glitch 3s 1 0.05s; /* Run once, with slight delay */
+// }
+
+// .glitch::after {
+//   content: attr(data-text);
+//   position: absolute;
+//   left: 2px;
+//   text-shadow: -5px 0 #999;
+//   overflow: hidden;
+//   top: 0;
+//   animation: noise-2 3s linear alternate-reverse 1, glitch 3s 1; /* Run once */
+// }
+
+// @keyframes glitch {
+//   1% {
+//     transform: rotateX(10deg) skewX(70deg);
+//   }
+
+//   2% {
+//     transform: rotateX(0deg) skewX(0deg);
+//   }
+// }
+
+// @keyframes noise-1 {
+//   $steps: 30;
+
+//   @for $i from 1 through $steps {
+//     #{percentage(math.div($i, $steps))} {
+//       $top: random(100);
+//       $bottom: random(101 - $top);
+//       clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+//     }
+//   }
+// }
+
+// @keyframes noise-2 {
+//   $steps: 30;
+
+//   @for $i from 0 through $steps {
+//     #{percentage(math.div($i, $steps))} {
+//       $top: random(100);
+//       $bottom: random(101 - $top);
+//       clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+//     }
+//   }
+// }

@@ -1,0 +1,269 @@
+.skillContainer {
+  font-size: 6.5vh;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  width: 100%;
+  grid-column: span 2;
+  display: flex;
+  justify-content: start;
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: transform 4s infinite ease-in-out;
+}
+
+@keyframes transform {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.mainContainer {
+  margin-top: 10vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 2vw;
+  row-gap: 2vh;
+  padding: 5vh;
+}
+
+.skillCard {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(141, 141, 141, 0.5);
+}
+
+.skillCard .face {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.face.face1 {
+  background-color: #fffcf5;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.face.face2 {
+  border: 3px solid #999;
+  transition: 0.5s;
+}
+
+.cardHead {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+  color: #555;
+  transition: 0.5s;
+  text-shadow: 0 2px 5px rgba(157, 157, 157, 0.2);
+  z-index: 10;
+  opacity: 0;
+}
+
+.skillCard:hover .face.face2 {
+  height: 8vh;
+  background-image: none;
+}
+
+.skillCard:hover .cardHead {
+  font-size: 3.5vh;
+  font-weight: 900;
+  opacity: 1;
+}
+
+.skillCard .face.face2 {
+  background-color: #fffcf5;
+  border-radius: 10px;
+}
+
+.text {
+  background-color: #555;
+  font-size: 2vh;
+  font-weight: 900;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text:hover{
+  transform: scale(1.05);
+  font-weight: 500;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10%;
+  padding-top: 5vh;
+}
+
+.webCard-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding-top: 5vh;
+
+}
+
+.skillCard {
+  grid-row: span 2;
+}
+
+#webCard {
+  grid-row: span 4;
+}
+
+@media only screen and (max-width: 1280px) {
+  .cardHead{
+    font-size: 3.5vh;
+  }
+  .text{
+    font-size: 1.8vh;
+  }
+  .skillContainer {
+    font-size: 8vh;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .text {
+    font-size: 1.35vh;
+  }
+  .skillCard:hover .cardHead {
+    font-size: 3vh;
+  }
+
+  .skillCard:hover .cardHead {
+    font-size: 1.5vh;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+
+  .mainContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto repeat(5, 1fr) auto;
+    margin-top: 1vh;
+    row-gap: 3vh;
+  }
+  .skillContainer {
+    font-size: 5vh;
+  }
+  .underline-animation::after {
+    bottom: 0;
+  }
+
+  .makeAwesome {
+    margin-top: 3vh;
+    font-size: 4vh;
+    grid-row: 7;
+  }
+  #webCard {
+    grid-row: 2;
+
+  }
+  #uixCard {
+    grid-row: 3;
+  }
+  #dataCard {
+    grid-row: 4;
+  }
+  #androidCard {
+    grid-row: 5;
+  }
+  #languageCard {
+    grid-row: 6;
+  }
+  .text {
+    font-size: 1vh;
+  }
+  .skillCard{
+    height:300px;
+  }
+  .cardHead{
+    font-size: 5vh;
+  }
+  .skillCard:hover .cardHead {
+    font-size: 3.5vh;
+  }
+
+  .text {
+    font-size: 1.5vh;
+  }
+
+  .content{
+    padding-top: 0;
+  }
+
+  .webCard-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10%;
+
+  }
+}
+
+.webCard-face{
+  background-image:url(../../../public/web.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.uixCard-face{
+  background-image:url(../../../public/UIX.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.androidCard-face{
+  background-image:url(../../../public/android.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.dataCard-face{
+  background-image:url(../../../public/data.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.languageCard-face{
+  background-image:url(../../../public/languages.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
