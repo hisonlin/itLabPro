@@ -1,23 +1,13 @@
 import './App.scss';
 import CityInput from "./CityInput";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import ImageList from "./ImageList";
+import {useSelector} from "react-redux";
 
 function App() {
-    const[images, setImages] = useState([]);
-    const[background, setBackground] = useState('');
-
-    const getImages = (imageList) => {
-        setImages(imageList);
-    }
-
-    const updateMainBG = (img) => {
-        setBackground(img);
-    }
-
-    useEffect(() => {
-        images.length > 0 && setBackground(images[0])
-    }, [images])
+    const images = useSelector(state => state.cityViewReducer.imgLibrary)
+    const selectedImg = useSelector(state => state.cityViewReducer.selectedImg)
+    const background = selectedImg || images[0];
 
     useEffect(() => {
         document.title = !!background && background?.des && background.des?
@@ -26,8 +16,8 @@ function App() {
 
     return (
         <div className="App" style={{background:background&&`url('${background.regular}') no-repeat center center/cover fixed`}}>
-            <CityInput getImages={getImages}/>
-            <ImageList images={images} updateMainBG={updateMainBG}/>
+            <CityInput/>
+            <ImageList />
         </div>
     );
 }

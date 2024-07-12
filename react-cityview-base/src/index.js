@@ -3,9 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 
+//import for redux
+import {createStore, applyMiddleware} from "redux";
+import {Provider} from "react-redux";
+import reducers from "./reducers"
+import {thunk} from "redux-thunk";
+
+const reduxStore = createStore(reducers, applyMiddleware(thunk))
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={reduxStore}>
+        <App />
+    </Provider>,
 );

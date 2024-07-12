@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {DefaultCity, URL, unsplashKey} from "./consts";
 import axios from "axios";
 import './CityInput.scss'
+import {fetchImageActionAsync, getCity, getPage} from "./actions/action";
+import {useDispatch, useSelector} from "react-redux";
 
-const CityInput = ({getImages}) => {
-    const [city, setCity] = useState(DefaultCity);
-    console.log('city:', city)
-    const [images, setImages] = useState([])
-    console.log('images:', images)
+const CityInput = () => {
+    const dispatch = useDispatch();
+    const index = useSelector(state=>state.cityViewReducer.index)
+    const city = useSelector(state=>state.cityViewReducer.city)
 
     const cbInput = (e) => {
         let newCity = e.target.value.trim().toLowerCase();
@@ -15,49 +16,18 @@ const CityInput = ({getImages}) => {
         e.key === 'Enter' &&
         newCity !== city &&
         (() => {
-            setCity(newCity);//async
-            fetchCity(newCity);
+            dispatch(getCity(newCity))
+            dispatch(getPage(1))
+            dispatch(fetchImageActionAsync(newCity, 1));
         })();
     };
 
-    useEffect(() => {
-        fetchCity(DefaultCity);
-
-    }, []);
-
-    const fetchCity = (newCity) => {
-        axios.get(URL, {
-            params: {
-                query: newCity,
-                orientation: 'landscape',
-            },
-            headers: {
-                Authorization: `Client-ID ${unsplashKey}`
-            }
-        }).then(res => {
-            console.log(res);
-            let {data: {results}} = res;
-            console.log(results);
-
-            let imageList = results.map((item) => ({
-                des: item.alt_description,
-                regular: item.urls.regular,
-                thumb: item.urls.thumb,
-            }));
-            console.log(imageList);
-            setImages(imageList);
-        }).catch(err => {
-            console.log(err);
-        });
-    }
-
-    useEffect(() => {
-         getImages(images);
-    }, [images]);
-
     return (
         <>
-            <h2 className={'cityName'}>NewCity: {city}</h2>
+            <h2 className={'cityName'}>NewCity: {city}
+                <br/>
+                <span>Image Index: {index}</span>
+            </h2>
             <div className={'searchBar'}>
                 <input type="text"
                        placeholder="Enter city name"
