@@ -40,4 +40,19 @@
   font-size: 20px;
 }
 
+.alertBox {
+  text-align: center;
+  overflow: hidden;
+  background: rgba(255, 0, 14, 0.75);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+}
+
 /*# sourceMappingURL=CityInput.css.map */

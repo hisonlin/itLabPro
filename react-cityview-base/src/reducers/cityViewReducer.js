@@ -1,11 +1,23 @@
-import {CITY, DefaultCity, FETCH_ALL_IMAGES, GET_IMAGES_INDEX, PAGE, SELECTED_IMG} from "../consts";
+import {
+    CITY,
+    DefaultCity, ERROR,
+    FETCH_ALL_IMAGES,
+    FETCH_TWO_CITY,
+    GET_IMAGES_INDEX,
+    LOADING,
+    PAGE,
+    SELECTED_IMG
+} from "../consts";
 
 const initialState = {
     imgLibrary: [],
     index: 0,
     selectedImg: null,
     city: DefaultCity,
-    page: 1
+    page: 1,
+    isLoading: true,
+    twoCity: null,
+    error: null
 }
 
 export const cityViewReducer = (state = initialState, action) => {
@@ -34,6 +46,21 @@ export const cityViewReducer = (state = initialState, action) => {
             return {
                 ...state,
                 page: action.payload
+            }
+        case LOADING:
+            return {
+                ...state,
+                isLoading: action.payload
+            }
+        case FETCH_TWO_CITY:
+            return {
+                ...state,
+                twoCity: action.payload
+            }
+        case ERROR:
+            return {
+                ...state,
+                error: action.payload
             }
         default:
             return state
