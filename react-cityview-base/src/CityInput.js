@@ -46,23 +46,23 @@ const CityInput = () => {
                     </div>
                 )}
             </div>
-            <button onClick={() => {
-                dispatch(fetchImageAPIAwait())
-            }}>
-                Fetch using async/await
-            </button>
-            <br/>
-            <button onClick={() => {
-                dispatch(fetchImagePromiseAll())
-            }}>
-                Fetch two city using Promise.all
-            </button>
-            <br/>
-            <button onClick={() => {
-                dispatch(fetchImageWithWrongKey())
-            }}>
-                Fetch images with wrong key
-            </button>
+            {/*<button onClick={() => {*/}
+            {/*    dispatch(fetchImageAPIAwait())*/}
+            {/*}}>*/}
+            {/*    Fetch using async/await*/}
+            {/*</button>*/}
+
+            {/*<button onClick={() => {*/}
+            {/*    dispatch(fetchImagePromiseAll())*/}
+            {/*}}>*/}
+            {/*    Fetch two city using Promise.all*/}
+            {/*</button>*/}
+
+            {/*<button onClick={() => {*/}
+            {/*    dispatch(fetchImageWithWrongKey())*/}
+            {/*}}>*/}
+            {/*    Fetch images with wrong key*/}
+            {/*</button>*/}
         </>
     );
 };

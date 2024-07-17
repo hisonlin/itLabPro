@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './ImageList.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchImageActionAsync, getImagesIndex, getPage, getSelectedImg} from "./actions/action";
+import {useNavigate} from "react-router-dom";
 
 const ImageList = () => {
     const images = useSelector(state => state.cityViewReducer.imgLibrary);
@@ -29,6 +30,8 @@ const ImageList = () => {
         }
     };
 
+    const navigate = useNavigate();
+
     if (images.length === 0) {
         return null; // Or you can return a loading spinner or message
     }
@@ -46,6 +49,7 @@ const ImageList = () => {
                         onClick={() => {
                             dispatch(getSelectedImg(img));
                             dispatch(getImagesIndex(index));
+                            navigate(`/image/${index}`);
                         }}
                     >
                         <img src={img.thumb} alt={img.des} />
