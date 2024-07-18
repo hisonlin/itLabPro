@@ -1,4 +1,6 @@
-import {FETCH_ALL_IMAGES, GET_IMAGES_INDEX} from "../consts";
+import {AccessKey, BasicUrl, FETCH_ALL_IMAGES, GET_IMAGES_INDEX} from "../consts";
+import axios from "axios";
+import imageList from "../ImageList";
 
 const imgLibrary = [
     {
@@ -19,7 +21,6 @@ const imgLibrary = [
     },
     ]
 
-
 //action creator
 export const fetchImageAction=()=>{
     return {
@@ -32,5 +33,50 @@ export const getImagesIndex=(index)=>{
     return {
         type: GET_IMAGES_INDEX,
         payload: index
+    }
+}
+
+export const fetchImageActionAsync=(city)=>{
+
+    return (dispatch)=>{
+        dispatch({
+            type: 'loading',
+            payload:true
+        })
+            axios.get(BasicUrl, {
+                params: {
+                    query: city,
+                    orientation: 'landscape'
+                },
+                headers: {
+                    Authorization: `Client-ID ${AccessKey}`
+                }
+            }).then(res => {
+                let {data: {results}} = res
+                let imageList = results.map(item => ({
+                    des: item.alt_description,
+                    regular: item.urls.regular,
+                    thumb: item.urls.thumb
+                }))
+
+                console.log('tidied data', imageList)
+                dispatch({
+                    type: 'loading',
+                    payload:false
+
+                })
+                dispatch(
+                    {
+                        type: FETCH_ALL_IMAGES,
+                        payload: imageList
+                    }
+                )
+
+            }).catch(err => {
+                dispatch({
+                    type: 'loading',
+                    payload:false
+                })
+                console.log('fetch city http error!', err)})
     }
 }
